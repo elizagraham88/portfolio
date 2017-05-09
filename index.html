@@ -4,32 +4,125 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
- <title>Elizabeth's Final Project</title>
- <meta name="author" content="">
- <meta name="description" content="">
- <meta name="keywords" content="">
+ <title>Heaven In A Box - Unit 10 Final Project</title>
+ <meta name="author" content="Heaven In A Box">
+ <meta name="description" content="Heaven In A Box">
+ <meta name="keywords" content="Heaven In A Box">
 
-<meta name="viewport" content="width=device-width">
-
-
-  <!-- <link rel="stylesheet" href="_css/style.css"> -->
-
+ <meta name="viewport" content="width=device-width">
+ <link href="https://fonts.googleapis.com/css?family=Homemade+Apple|Roboto|Rock+Salt" rel="stylesheet">
+ <link rel="stylesheet" href="css/style.css">
+ <!-- jQuery UI CSS -->
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
  
 </head>
    <body>
       
-
-
-<h1> Hi, Welcome to my webpage! </h1>
-
+<div id="main">
 
 
 
+<h1 class="leading"> Heaven In A Box </h1>
+<h2 class="subleading">"Come On Over" </h2>
+
+<center><img class="tom" src="images/toms-restaurant.jpg" alt="Tom's Restaurant"></center>
+
+<section id="s1">
+<h2 class="s-title"> Reservations </h2>
+
+<div class="box-half">
+
+	<div class="s-subtitle">Make a reservation</div>
+
+	<!-- class="ui-widget ui-corner-all"
+	class="ui-button ui-widget ui-corner-all" -->
+	<form id="make-res">
+	<label for="name">Name: </label><input type="text" id="namefield" placeholder="Enter your full name"></input> <br/><br/>
+	<label for="date">Date: &nbsp; </label><input type="text" id="datepicker" placeholder="Pick a Date"> <br/><br/> 
+
+	<input type="submit" value="Confirm">
+	</form>
+</div>
+
+<div class="box-half" id="existing-res">
+
+<div class="s-subtitle">Existing reservations</div>
+
+<table align="center" border="1" cellpadding="5" cellspacing="0">
+<thead>
+<th>Name</th>
+<th>Date</th>
+</thead>
+<tbody>
+<tr>
+<td class="name"> [ name data here ] </td>
+<td class="date"> [ date data here ] </td>
+</tr>
+
+<tr>
+<td> [ name data here ] </td>
+<td> [ date data here ] </td>
+</tr>
+
+<tr>
+<td> [ name data here ] </td>
+<td> [ date data here ] </td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+	
+</section> <!-- end of #s1 -->
+
+<div class="clear"></div>
+<section id="s2">
+<h2 class="s-title"> Come Dine with Us </h2>
 
 
+<div class="container-fluid restaurant-locator">
+         <div class="row">
+            <div id="map" class="col-md-12" style="height:100vh"></div>
+         </div>
+</div>
+</section> <!-- end of #s2 -->
+
+
+<section id="s3">
+<h2 class="s-title"> Customer Reviews </h2>
+
+
+<img class="jerry" src="images/jerry.jpg" alt="Jerry">
+
+
+<div class="reviews">
+
+"Big lettuce, big carrots, tomatoes like volleyballs." <br/>
+— Jerry Seinfeld, on The BIG Salad
+</div>
+
+</section> <!-- end of #s3 -->
+
+
+</div> <!-- end of #main -->
 
 <!-- JavaScript at the bottom for fast page loading -->
-  
+
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+<!-- jQuery -->
+<script src="js/jquery-3.0.0.js"></script>
+<!-- jQuery UI -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- handlebars -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+<!-- custom js -->
+<script src="js/main.js"></script>
+<!-- Google Map API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDbt1M_Y1NT5NIZ27O1y0L-PXT5-bEIjs" async defer></script>
+
 <!-- end scripts  -->
 
 
