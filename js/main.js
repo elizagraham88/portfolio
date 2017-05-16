@@ -125,18 +125,9 @@ function getReservations() {
       //add the confirmed reservation times to the blank array
 
       closedTimes.push(allReservations[reservation].time);
-      console.log(closedTimes);
+      //console.log(closedTimes);
 
-      $(".ui-timepicker-list li").each(function(){
-
-
-        if($(this).text() == allReservations[reservation].time) {
-          $(this).addClass('ui-timepicker-selected');
-        }
-    });
-
-
-      
+   
     //Step 8 - inject handlebars HTML w/ the results data object
       
      var source = $("#reservation-template").html();
