@@ -185,7 +185,7 @@ function initMap() {
 
 //OpenWeatherMap API 
 
-var OPEN_WEATHER_MAP_API = "http://circuits-api.generalassemb.ly/8737fcf3-6a39-4548-a324-209d535e59fd?q=";
+var OPEN_WEATHER_MAP_API = "https://circuits-api.generalassemb.ly/8737fcf3-6a39-4548-a324-209d535e59fd?q=";
 var city = "Manhattan";
 var resultElement = $(".cur-weather");
 
