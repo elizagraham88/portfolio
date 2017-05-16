@@ -13,7 +13,9 @@
  <link href="https://fonts.googleapis.com/css?family=Homemade+Apple|Roboto|Rock+Salt" rel="stylesheet">
  <link rel="stylesheet" href="css/style.css">
  <!-- jQuery UI CSS -->
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ <link rel="stylesheet" href="css/jquery-ui.css">
+ <!-- jQuery Timepicker CSS -->
+ <link rel="stylesheet" href="css/jquery.timepicker.css">
  
 </head>
    <body>
@@ -23,9 +25,9 @@
 
 
 <h1 class="leading"> Heaven In A Box </h1>
-<h2 class="subleading">"Come On Over" </h2>
+<h2 class="subleading">"Come On Over...Heaven's Waiting" </h2>
 
-<center><img class="tom" src="images/toms-restaurant.jpg" alt="Tom's Restaurant"></center>
+<center><img class="tom" src="images/heaven-diner.jpg" alt="Heaven In A Box Diner"></center>
 
 <section id="s1">
 <h2 class="s-title"> Reservations </h2>
@@ -36,9 +38,12 @@
 
 	<!-- class="ui-widget ui-corner-all"
 	class="ui-button ui-widget ui-corner-all" -->
-	<form id="make-res">
-	<label for="name">Name: </label><input type="text" id="namefield" placeholder="Enter your full name"></input> <br/><br/>
-	<label for="date">Date: &nbsp; </label><input type="text" id="datepicker" placeholder="Pick a Date"> <br/><br/> 
+	<form class="make-res">
+	<label for="name">Name:</label> <input type="text" id="res-name" placeholder="Enter your full name"></input>  <br/><br/>
+	<label for="date">Date: &nbsp; </label><input type="text" id="res-date" placeholder="Pick a Date"> <br/><br/> 
+	<label for="time">Time: &nbsp; </label><input type="text" id="res-time" placeholder="Select a Time"> <br/><br/>
+	<small class="error-text"> All fields are required! </small>
+	<br/><br/>
 
 	<input type="submit" value="Confirm">
 	</form>
@@ -52,25 +57,22 @@
 <thead>
 <th>Name</th>
 <th>Date</th>
+<th>Time</th>
+<th></th>
 </thead>
-<tbody>
-<tr>
-<td class="name"> [ name data here ] </td>
-<td class="date"> [ date data here ] </td>
-</tr>
-
-<tr>
-<td> [ name data here ] </td>
-<td> [ date data here ] </td>
-</tr>
-
-<tr>
-<td> [ name data here ] </td>
-<td> [ date data here ] </td>
-</tr>
-
+<tbody class="reservations">
 </tbody>
+
 </table>
+
+<script id="reservation-template" type="text/x-handlebars-template">
+	<tr data-id="{{reservationId}}">
+	<td class="name"> {{name}} </td>
+	<td class="date"> {{date}} </td>
+	<td class="time"> {{time}} </td>
+	<td class=""> <a href="#" class="cancel">Cancel</a></td>
+	</tr>
+</script>
 
 </div>
 	
@@ -79,28 +81,25 @@
 <div class="clear"></div>
 <section id="s2">
 <h2 class="s-title"> Come Dine with Us </h2>
-
+<p align="center"> The current weather in <span class="cur-city">New York City</span> is <span class="cur-weather"></span> F.</p>
 
 <div class="container-fluid restaurant-locator">
          <div class="row">
-            <div id="map" class="col-md-12" style="height:100vh"></div>
+            <div id="map" class="col-md-12" style="height:60vh"></div>
          </div>
 </div>
 </section> <!-- end of #s2 -->
 
 
 <section id="s3">
-<h2 class="s-title"> Customer Reviews </h2>
+<h2 class="s-title"> Tweet Us @HeavenInABox </h2>
+
+<center> <a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text=Enjoying the weather while dining at @HeavenInABox :)"
+  data-size="large">
+Tweet</a> </center>
 
 
-<img class="jerry" src="images/jerry.jpg" alt="Jerry">
-
-
-<div class="reviews">
-
-"Big lettuce, big carrots, tomatoes like volleyballs." <br/>
-— Jerry Seinfeld, on The BIG Salad
-</div>
 
 </section> <!-- end of #s3 -->
 
@@ -114,14 +113,34 @@
 <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
 <!-- jQuery -->
 <script src="js/jquery-3.0.0.js"></script>
-<!-- jQuery UI -->
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- jQuery UI for datepicker functionality -->
+<script src="js/jquery-ui.js"></script>
+<!-- jQuery timepicker functionality -->
+<script src="js/jquery.timepicker.min.js"></script>
 <!-- handlebars -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 <!-- custom js -->
 <script src="js/main.js"></script>
 <!-- Google Map API -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDbt1M_Y1NT5NIZ27O1y0L-PXT5-bEIjs" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDbt1M_Y1NT5NIZ27O1y0L-PXT5-bEIjs" async></script>
+
+<!-- Twitter API -->
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
 
 <!-- end scripts  -->
 
