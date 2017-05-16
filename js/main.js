@@ -39,9 +39,9 @@ var database = firebase.database();
 var reservationData = {};
 
 //Step 3 - get the name/date/time data using an on change event
-$("#res-name, #res-date, #res-time").change(function() {
+$("#res-date, #res-time").change(function() {
 
-  reservationData.name = $('#res-name').val();
+  
   reservationData.date = $('#res-date').val();
   reservationData.time = $('#res-time').val();
 });
@@ -51,7 +51,8 @@ $("#res-name, #res-date, #res-time").change(function() {
 $('.make-res').on('submit', function(e) {
   e.preventDefault();
 
-
+  reservationData.name = $('#res-name').val();
+  
   //if name is blank
   if(reservationData.name === ""){
     $('#res-name').addClass("error-input");
