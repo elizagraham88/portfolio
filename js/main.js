@@ -193,7 +193,7 @@ var resultElement = $(".cur-weather");
 
 function callOpenWeatherMap(){
  
-    $.get(OPEN_WEATHER_MAP_API + city +, function(searchResult) {
+    $.get(OPEN_WEATHER_MAP_API + city, function(searchResult) {
       //console.log(searchResult.main.temp);
        
       var Ftemp =  Math.round(1.8 * (searchResult.main.temp - 273) + 32);
