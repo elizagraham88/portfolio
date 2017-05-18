@@ -10,18 +10,29 @@ body{
 	text-align: center;
 }
 
-h1.leading{
-
+.leading{
 	font-size: 40px;
 	font-family: 'Rock Salt', cursive;
 	text-align: center;
 	margin: 0;
 }
 
+.leading2{
+	font-size: 16px;
+	color: purple;
+	font-family: 'Rock Salt', cursive;
+	text-align: center;
+	margin: 0;
+
+}
+
 .work-links{
 	list-style-type: none;
 	margin-bottom: 80px; 
+}
 
+.work-links a, .work-links a:visited {
+	color: #000;
 }
 
 
