@@ -186,7 +186,7 @@ function initMap() {
 
 //OpenWeatherMap API 
 
-var OPEN_WEATHER_MAP_API = "http://api.openweathermap.org/data/2.5/weather?appid=921b68e67acb87e6b28adfca929e3b51&q=";
+var OPEN_WEATHER_MAP_API = "https://api.openweathermap.org/data/2.5/weather?appid=921b68e67acb87e6b28adfca929e3b51&q=";
 //var API_KEY = "921b68e67acb87e6b28adfca929e3b51";
 var city = "NY,NY";
 var resultElement = $(".cur-weather");
