@@ -1,0 +1,31 @@
+body{
+
+	font-family: 'Roboto', sans-serif;
+}
+
+#main{
+	margin: 0 auto;
+	max-width: 1060px;
+	width: 100%;
+	text-align: center;
+}
+
+h1.leading{
+
+	font-size: 40px;
+	font-family: 'Rock Salt', cursive;
+	text-align: center;
+	margin: 0;
+}
+
+.work-links{
+	list-style-type: none;
+	margin-bottom: 80px; 
+
+}
+
+
+.quote{
+	font-family: 'Rock Salt', cursive;
+	font-size: 12px;
+}
