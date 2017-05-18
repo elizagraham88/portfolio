@@ -186,16 +186,18 @@ function initMap() {
 
 //OpenWeatherMap API 
 
-var OPEN_WEATHER_MAP_API = "https://circuits-api.generalassemb.ly/8737fcf3-6a39-4548-a324-209d535e59fd?q=";
-var city = "Manhattan";
+var OPEN_WEATHER_MAP_API = "http://api.openweathermap.org/data/2.5/weather?appid=921b68e67acb87e6b28adfca929e3b51&q=";
+//var API_KEY = "921b68e67acb87e6b28adfca929e3b51";
+var city = "NY,NY";
 var resultElement = $(".cur-weather");
 
 function callOpenWeatherMap(){
  
-    $.get(OPEN_WEATHER_MAP_API + city, function(searchResult) {
+    $.get(OPEN_WEATHER_MAP_API + city +, function(searchResult) {
       //console.log(searchResult.main.temp);
        
       var Ftemp =  Math.round(1.8 * (searchResult.main.temp - 273) + 32);
+      //console.log(Ftemp);
       resultElement.html(Ftemp);
      });
 
