@@ -26,8 +26,17 @@ body{
 
 }
 
+.leading3{
+	font-size: 16px;
+	color: black;
+	font-family: 'Rock Salt', cursive;
+	text-align: center;
+	margin: 0;
+}
+
 img.liz{
 width: 200px;
+margin-bottom: 60px;
 }
 
 .work-links{
@@ -53,7 +62,7 @@ width: 200px;
   	font-size: 22px;
   }
 
-  .leading2{
+  .leading2, .leading3{
   	font-size: 12px;
   }
 
