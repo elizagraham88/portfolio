@@ -7,10 +7,6 @@ $(document).ready(function() {
   //$('#res-time').timepicker();
 
   $('#res-time, #res-endTime').timepicker({
-    //'disableTimeRanges': [
-        //['1am', '2am'],
-        //['3am', '4:01am']
-    //]
 });
 
  	//run the google map functionality
@@ -141,21 +137,19 @@ function getReservations() {
   });
 
 
-  $('#res-time').timepicker({
-    'disableTimeRanges': closedTimes
-});
+  //$('#res-time').timepicker({
+  //  'disableTimeRanges': closedTimes
+  //});
 
 }
 
 
 
 
-//Cancel a reservation
+//Cancel a reservation from DB
 
 $('.reservations').on('click', '.cancel', function (e) {
     e.preventDefault();
-
-   
 
     var removeRes = $(e.target).parent().parent().data('id');
 
@@ -196,7 +190,7 @@ function initMap() {
 
 //OpenWeatherMap API 
 
-var OPEN_WEATHER_MAP_API = "http://circuits-api.generalassemb.ly/8737fcf3-6a39-4548-a324-209d535e59fd?q=";
+var OPEN_WEATHER_MAP_API = "https://circuits-api.generalassemb.ly/8737fcf3-6a39-4548-a324-209d535e59fd?q=";
 
 //"http://api.openweathermap.org/data/2.5/weather?appid=921b68e67acb87e6b28adfca929e3b51&q=";
 //var API_KEY = "921b68e67acb87e6b28adfca929e3b51";
