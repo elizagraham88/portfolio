@@ -26,6 +26,10 @@ body{
 
 }
 
+img.liz{
+width: 200px;
+}
+
 .work-links{
 	list-style-type: none;
 	margin-bottom: 80px; 
@@ -39,4 +43,30 @@ body{
 .quote{
 	font-family: 'Rock Salt', cursive;
 	font-size: 12px;
+}
+
+
+
+@media only screen and (max-width: 480px) {
+  
+  .leading{
+  	font-size: 22px;
+  }
+
+  .leading2{
+  	font-size: 12px;
+  }
+
+  img.liz{
+	width: 120px;
+  }
+
+
+  .work-links{
+  	margin-bottom: 40px;
+  	padding: 0;
+  }
+
+
+
 }
