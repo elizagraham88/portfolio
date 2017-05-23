@@ -4,7 +4,14 @@ $(document).ready(function() {
   $( "#res-date" ).datepicker();
 
   //load the timepicker UI
-  $('#res-time').timepicker();
+  //$('#res-time').timepicker();
+
+  $('#res-time, #res-endTime').timepicker({
+    //'disableTimeRanges': [
+        //['1am', '2am'],
+        //['3am', '4:01am']
+    //]
+});
 
  	//run the google map functionality
 	initMap();
@@ -52,34 +59,24 @@ $('.make-res').on('submit', function(e) {
   e.preventDefault();
 
   reservationData.name = $('#res-name').val();
-  
-  //if name is blank
-  if(reservationData.name === ""){
-    $('#res-name').addClass("error-input");
-    $('.error-text').show();
-  }else{
-    $('#res-name').removeClass("error-input").addClass("valid-input");
-    $('.error-text').hide();
-  }
-
-  //if date is blank
-  if(reservationData.date === "" || reservationData.date === undefined){
-    $('#res-date').addClass("error-input");
-    $('.error-text').show();
-  }else{
-    $('#res-date').removeClass("error-input").addClass("valid-input");
-    $('.error-text').hide();
-  }
+  reservationData.endTime = $('#res-endTime').val();
   
 
-  //if time is blank
-  if(reservationData.time === "" || reservationData.time === undefined){
-    $('#res-time').addClass("error-input");
-    $('.error-text').show();
-  }else{
-    $('#res-time').removeClass("error-input").addClass("valid-input");
-    $('.error-text').hide();
+  //form field validation
+  var formFields = ['#res-name', '#res-name', '#res-date', '#res-time', '#res-endTime'];
+
+  for(var i = 0; i < formFields.length; i++){
+
+      if($(formFields[i]).val() === "" || $(formFields[i]).val() === undefined){
+        $(formFields[i]).addClass("error-input");
+        $('.error-text').show();
+      }else{
+        $(formFields[i]).removeClass("error-input").addClass("valid-input");
+        $('.error-text').hide();
+      }
   }
+
+
 
   //Step 5 - if all fields are valid, post to data to the Firebase DB
   if(reservationData.name && reservationData.date && reservationData.time !== ""){
@@ -120,12 +117,12 @@ function getReservations() {
         name: allReservations[reservation].name,
         date: allReservations[reservation].date,
         time: allReservations[reservation].time,
+        endTime: allReservations[reservation].endTime,
         reservationId: reservation
       };
 
       //add the confirmed reservation times to the blank array
-
-      closedTimes.push(allReservations[reservation].time);
+      closedTimes.push([allReservations[reservation].time, allReservations[reservation].endTime]);
       //console.log(closedTimes);
 
    
@@ -143,13 +140,26 @@ function getReservations() {
 
   });
 
+
+  $('#res-time').timepicker({
+    'disableTimeRanges': closedTimes
+});
+
 }
+
+
+
 
 //Cancel a reservation
 
 $('.reservations').on('click', '.cancel', function (e) {
     e.preventDefault();
 
+   
+
+    var removeRes = $(e.target).parent().parent().data('id');
+
+    database.ref('reservations').child(removeRes).remove();
     $(this).parent().parent().remove();
 });
 
@@ -186,7 +196,9 @@ function initMap() {
 
 //OpenWeatherMap API 
 
-var OPEN_WEATHER_MAP_API = "http://api.openweathermap.org/data/2.5/weather?appid=921b68e67acb87e6b28adfca929e3b51&q=";
+var OPEN_WEATHER_MAP_API = "http://circuits-api.generalassemb.ly/8737fcf3-6a39-4548-a324-209d535e59fd?q=";
+
+//"http://api.openweathermap.org/data/2.5/weather?appid=921b68e67acb87e6b28adfca929e3b51&q=";
 //var API_KEY = "921b68e67acb87e6b28adfca929e3b51";
 var city = "NY,NY";
 var resultElement = $(".cur-weather");

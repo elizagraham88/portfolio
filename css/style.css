@@ -102,7 +102,7 @@ table th{
 	margin: 5px;
 	padding: 5px 0px;
 	border: 1px solid #000;
-	min-height: 325px;
+	min-height: 400px;
 }
 
 
@@ -120,6 +120,11 @@ table th{
 
 .reviews{
 	font-family: 'Rock Salt', cursive;
+}
+
+
+#m35{
+	margin-left: -35px;
 }
 
 .clear {

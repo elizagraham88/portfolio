@@ -42,6 +42,7 @@
 	<label for="name">Name:</label> <input type="text" id="res-name" placeholder="Enter your full name"></input>  <br/><br/>
 	<label for="date">Date: &nbsp; </label><input type="text" id="res-date" placeholder="Pick a Date"> <br/><br/> 
 	<label for="time">Time: &nbsp; </label><input type="text" id="res-time" placeholder="Select a Time"> <br/><br/>
+	<label for="end-time" id="m35">End Time: &nbsp; </label><input type="text" id="res-endTime" placeholder="Select an end time"> <br/><br/>
 	<small class="error-text"> All fields are required! </small>
 	<br/><br/>
 
@@ -58,6 +59,7 @@
 <th>Name</th>
 <th>Date</th>
 <th>Time</th>
+<th>End Time</th>
 <th></th>
 </thead>
 <tbody class="reservations">
@@ -70,6 +72,7 @@
 	<td class="name"> {{name}} </td>
 	<td class="date"> {{date}} </td>
 	<td class="time"> {{time}} </td>
+	<td class="end-time"> {{endTime}} </td>
 	<td class=""> <a href="#" class="cancel">Cancel</a></td>
 	</tr>
 </script>
