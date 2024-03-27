@@ -1,0 +1,81 @@
+body{
+
+	font-family: 'Roboto', sans-serif;
+}
+
+#main{
+	margin: 0 auto;
+	max-width: 1060px;
+	width: 100%;
+	text-align: center;
+}
+
+.leading{
+	font-size: 40px;
+	font-family: 'Rock Salt', cursive;
+	text-align: center;
+	margin: 0;
+}
+
+.leading2{
+	font-size: 16px;
+	color: purple;
+	font-family: 'Rock Salt', cursive;
+	text-align: center;
+	margin: 0;
+
+}
+
+.leading3{
+	font-size: 16px;
+	color: black;
+	font-family: 'Rock Salt', cursive;
+	text-align: center;
+	margin: 0;
+}
+
+img.liz{
+width: 200px;
+margin-bottom: 60px;
+}
+
+.work-links{
+	list-style-type: none;
+	margin-bottom: 80px; 
+}
+
+.work-links a, .work-links a:visited {
+	color: #000;
+}
+
+
+.quote{
+	font-family: 'Rock Salt', cursive;
+	font-size: 12px;
+}
+
+
+
+@media only screen and (max-width: 480px) {
+  
+  .leading{
+  	font-size: 22px;
+  }
+
+  .leading2, .leading3{
+  	font-size: 12px;
+  }
+
+  img.liz{
+	width: 120px;
+  }
+
+
+  .work-links{
+  	margin-bottom: 40px;
+  	padding: 0;
+  }
+
+
+
+}
