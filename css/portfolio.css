@@ -34,14 +34,26 @@ body{
 	margin: 0;
 }
 
+.leading3 a {
+	color: #000;
+	text-decoration: none;
+}
+
+.leading3 a:hover{
+	color: blue;
+	text-decoration: underline;
+}
+
 img.liz{
-width: 200px;
-margin-bottom: 60px;
+	width: 200px;
+	margin-bottom: 60px;
+	border-radius: 8px;
 }
 
 .work-links{
 	list-style-type: none;
-	margin-bottom: 80px; 
+	margin-bottom: 80px;
+	padding-left: 0 !important;
 }
 
 .work-links a, .work-links a:visited {
@@ -72,8 +84,8 @@ margin-bottom: 60px;
 
 
   .work-links{
-  	margin-bottom: 40px;
-  	padding: 0;
+	padding: 0;
+  	margin: 0 auto; 
   }
 
 
